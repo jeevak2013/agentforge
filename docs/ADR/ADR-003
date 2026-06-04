@@ -1,0 +1,466 @@
+# ADR-003: Local LLM Support as a First-Class Capability
+
+Status: Accepted
+
+Date: 2026-06-02
+
+Decision Makers:
+AgentForge Architecture Board
+
+---
+
+# Context
+
+AgentForge is intended to operate across:
+
+- Developer Laptops
+- Small Teams
+- Enterprises
+- Air-Gapped Environments
+- Regulated Industries
+
+Examples:
+
+- Healthcare
+- Finance
+- Government
+- Defense
+
+Many organizations cannot send sensitive data to public cloud providers.
+
+A strategic decision is required regarding support for local models.
+
+---
+
+# Problem
+
+Should AgentForge:
+
+Option A
+
+Support only cloud providers.
+
+or
+
+Option B
+
+Support cloud providers and local models equally.
+
+---
+
+# Options Considered
+
+## Option A — Cloud Only
+
+Supported Providers
+
+OpenAI
+
+Anthropic
+
+Gemini
+
+Azure OpenAI
+
+Advantages
+
+Simple Architecture
+
+Faster Initial Development
+
+High Model Quality
+
+---
+
+Disadvantages
+
+Vendor Lock-In
+
+Privacy Concerns
+
+Compliance Challenges
+
+Internet Dependency
+
+High Long-Term Cost
+
+No Air-Gapped Support
+
+Decision
+
+Rejected
+
+---
+
+## Option B — Cloud + Local Models
+
+Supported Providers
+
+OpenAI
+
+Anthropic
+
+Gemini
+
+OpenRouter
+
+Ollama
+
+LM Studio
+
+vLLM
+
+OpenAI-Compatible APIs
+
+Advantages
+
+Provider Independence
+
+Data Privacy
+
+Cost Optimization
+
+Offline Operation
+
+Enterprise Adoption
+
+Future Flexibility
+
+---
+
+Disadvantages
+
+Additional Testing
+
+Model Quality Variability
+
+More Provider Implementations
+
+Decision
+
+Accepted
+
+---
+
+# Decision
+
+AgentForge will support local models as a first-class platform capability.
+
+Local providers will be treated equally to cloud providers.
+
+No runtime component may assume:
+
+- Internet connectivity
+- Cloud access
+- Specific provider availability
+
+---
+
+# Strategic Importance
+
+Local LLM support is not a feature.
+
+It is a platform principle.
+
+---
+
+# Supported Local Providers
+
+Version 1
+
+Ollama
+
+---
+
+Version 2
+
+LM Studio
+
+vLLM
+
+---
+
+Version 3
+
+Enterprise GPU Clusters
+
+Private Inference Endpoints
+
+---
+
+# Architecture
+
+Runtime
+↓
+ProviderManager
+↓
+BaseProvider
+↓
+Local Provider
+
+Examples
+
+OllamaProvider
+
+LMStudioProvider
+
+vLLMProvider
+
+---
+
+Runtime behavior remains identical regardless of provider.
+
+---
+
+# Local Development Benefits
+
+Developers can run:
+
+docker compose up
+
+↓
+
+AgentForge
+
+↓
+
+Ollama
+
+↓
+
+Local Model
+
+No cloud account required.
+
+---
+
+# Enterprise Benefits
+
+Organizations can deploy:
+
+AgentForge
+↓
+Private GPU Cluster
+↓
+Llama
+Qwen
+DeepSeek
+Mistral
+
+without exposing data externally.
+
+---
+
+# Security Benefits
+
+Sensitive data remains inside organization boundaries.
+
+Examples
+
+Healthcare Data
+
+Financial Data
+
+Proprietary Source Code
+
+Internal Documents
+
+---
+
+# Cost Benefits
+
+Simple Tasks
+
+↓
+
+Local Model
+
+↓
+
+Near-Zero Cost
+
+---
+
+Complex Tasks
+
+↓
+
+Premium Cloud Model
+
+↓
+
+Higher Quality
+
+---
+
+This supports future intelligent routing.
+
+---
+
+# Future LLM Gateway
+
+Phase 9.5
+
+Architecture
+
+Runtime
+↓
+ProviderManager
+↓
+LLM Gateway
+↓
+Provider
+
+Gateway Responsibilities
+
+Cost Optimization
+
+Provider Routing
+
+Fallbacks
+
+Policy Enforcement
+
+---
+
+Example
+
+Simple Coding Task
+↓
+Qwen Local
+
+---
+
+Complex Architecture Task
+↓
+Claude
+
+---
+
+# Air-Gapped Deployment Support
+
+AgentForge must support:
+
+No Internet Access
+
+No Public APIs
+
+Private Infrastructure Only
+
+---
+
+Examples
+
+Government
+
+Defense
+
+Healthcare
+
+Financial Institutions
+
+---
+
+# Consequences
+
+Positive
+
+✓ Data Privacy
+
+✓ Cost Optimization
+
+✓ Enterprise Adoption
+
+✓ Air-Gapped Support
+
+✓ Provider Independence
+
+✓ Future Flexibility
+
+---
+
+Negative
+
+✗ Additional Provider Testing
+
+✗ Model Quality Differences
+
+✗ More Operational Complexity
+
+---
+
+# Enforcement
+
+No runtime component may assume:
+
+Cloud Access
+
+OpenAI Availability
+
+Internet Connectivity
+
+---
+
+Provider implementations must conform to:
+
+BaseProvider
+
+ProviderRequest
+
+ProviderResponse
+
+---
+
+All new features must work with:
+
+Cloud Models
+
+and
+
+Local Models
+
+unless explicitly documented otherwise.
+
+---
+
+# Future Evolution
+
+Version 1
+
+Ollama
+
+---
+
+Version 2
+
+LM Studio
+
+vLLM
+
+---
+
+Version 3
+
+Private GPU Clusters
+
+Hybrid AI Infrastructure
+
+---
+
+Version 4
+
+Enterprise AI Platform
+
+Dynamic Local/Cloud Routing
+
+---
+
+# References
+
+ADR-002-Provider-Abstraction.md
+
+02_Provider_Design.md
+
+07_Deployment_Architecture.md
+
+09_AgentOps_Architecture.md

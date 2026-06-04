@@ -1,0 +1,275 @@
+# ADR-001: Modular Monolith Architecture
+
+Status: Accepted
+
+Date: 2026-06-02
+
+Decision Makers:
+AgentForge Architecture Board
+
+---
+
+# Context
+
+AgentForge is being developed as an enterprise-grade AI Agent Platform.
+
+The platform must support:
+
+- Coding Agents
+- Data Science Agents
+- Healthcare RCM Agents
+- Transport Agents
+- Future Domain Agents
+
+The architecture must remain:
+
+- Maintainable
+- Extensible
+- Observable
+- Secure
+
+A decision is required regarding the overall architectural style.
+
+---
+
+# Problem
+
+Should AgentForge be built as:
+
+Option A
+
+Monolithic Application
+
+---
+
+Option B
+
+Modular Monolith
+
+---
+
+Option C
+
+Microservices
+
+---
+
+Option D
+
+Distributed Service Platform
+
+---
+
+# Options Considered
+
+## Option A — Traditional Monolith
+
+Advantages
+
+- Simple
+- Fast development
+- Easy deployment
+
+Disadvantages
+
+- Poor separation of concerns
+- Difficult long-term scaling
+- Architecture erosion risk
+
+Decision
+
+Rejected
+
+---
+
+## Option B — Modular Monolith
+
+Advantages
+
+- Strong module boundaries
+- Easier development
+- Easier testing
+- Easier debugging
+- Lower operational complexity
+- Future extraction possible
+
+Disadvantages
+
+- Requires discipline
+- Module boundaries must be enforced
+
+Decision
+
+Accepted
+
+---
+
+## Option C — Microservices
+
+Advantages
+
+- Independent scaling
+- Independent deployment
+
+Disadvantages
+
+- Operational complexity
+- Distributed transactions
+- Higher infrastructure cost
+- Premature for Version 1
+
+Decision
+
+Rejected
+
+---
+
+## Option D — Distributed Service Platform
+
+Advantages
+
+- Maximum flexibility
+
+Disadvantages
+
+- Extremely high complexity
+- Unnecessary for current stage
+
+Decision
+
+Rejected
+
+---
+
+# Decision
+
+AgentForge will be implemented as a Modular Monolith.
+
+Repository Structure:
+
+apps/
+core/
+domains/
+infrastructure/
+security/
+agentops/
+evaluation/
+shared/
+
+Modules must communicate through defined interfaces.
+
+Direct coupling between modules is prohibited.
+
+---
+
+# Rationale
+
+Current Team Size
+
+Small
+
+---
+
+Current Product Stage
+
+Early Platform Development
+
+---
+
+Operational Requirements
+
+Moderate
+
+---
+
+Benefits
+
+Faster Development
+
+Lower Complexity
+
+Clear Boundaries
+
+Future Service Extraction
+
+---
+
+# Future Evolution
+
+Version 1
+
+Modular Monolith
+
+---
+
+Version 2
+
+Enhanced Modular Monolith
+
+---
+
+Version 3
+
+Selective Service Extraction
+
+Examples:
+
+AgentOps Service
+
+Evaluation Service
+
+MCP Service
+
+---
+
+Version 4
+
+Enterprise Agent Platform
+
+Potential Hybrid Architecture
+
+---
+
+# Consequences
+
+Positive
+
+✓ Easier Development
+
+✓ Easier Testing
+
+✓ Easier Refactoring
+
+✓ Lower Infrastructure Cost
+
+✓ Clear Module Ownership
+
+---
+
+Negative
+
+✗ Architectural Discipline Required
+
+✗ Risk of Boundary Violations
+
+---
+
+# Enforcement
+
+Dependency Rules defined in:
+
+docs/architecture/06_Repository_Architecture.md
+
+must be followed.
+
+All future architectural changes require new ADRs.
+
+---
+
+# References
+
+01_System_Architecture.md
+
+06_Repository_Architecture.md
+
+03_Roadmap.md
