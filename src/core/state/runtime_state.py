@@ -3,7 +3,7 @@ from enum import Enum
 
 class RuntimeState(str, Enum):
     """
-    REpresent the lifecycle state of an Agentforge task.
+    Represent the lifecycle state of an AgentForge task.
     """
 
     CREATED = "created"
