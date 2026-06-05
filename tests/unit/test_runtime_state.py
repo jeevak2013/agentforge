@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from src.core.state.runtime_state import RuntimeState
 
 

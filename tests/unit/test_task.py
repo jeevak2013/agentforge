@@ -8,14 +8,15 @@ This test suite verifies the core functionality of the ``Task`` class, including
 - Generation of ``created_at`` timestamps within the creation window.
 - Presence of an empty ``metadata`` dictionary by default.
 """
+from __future__ import annotations
 
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 from uuid import UUID
+
 import pytest
 
-from src.core.task.task import Task
-
 from src.core.state.runtime_state import RuntimeState
+from src.core.task.task import Task
 
 
 def test_task_creation():

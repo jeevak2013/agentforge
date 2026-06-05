@@ -1,8 +1,11 @@
+from __future__ import annotations
+
 from uuid import UUID
+
 import pytest
 
-from src.core.task.task import Task
 from src.core.runtime.execution_context import ExecutionContext
+from src.core.task.task import Task
 
 
 @pytest.fixture

@@ -1,8 +1,10 @@
-from datetime import datetime, UTC
+from __future__ import annotations
+
+from datetime import UTC, datetime
 from typing import Any
 from uuid import UUID, uuid4
 
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 from src.core.task.task import Task
 
