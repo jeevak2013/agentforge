@@ -4,11 +4,11 @@ import asyncio
 from dataclasses import dataclass
 from typing import AsyncGenerator
 
-from src.infrastructure.providers.base_provider import (
+from src.agentforge.infrastructure.providers.base_provider import (
     BaseProvider,
     ProviderHealth,
 )
-from src.infrastructure.providers.provider_models import (
+from src.agentforge.infrastructure.providers.provider_models import (
     ProviderRequest,
     ProviderResponse,
     FinishReason,

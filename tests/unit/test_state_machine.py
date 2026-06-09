@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import pytest
 
-from core.state.runtime_state import RuntimeState
-from core.state.state_machine import TaskStateMachine
+from src.agentforge.core.state.runtime_state import RuntimeState
+from src.agentforge.core.state.state_machine import TaskStateMachine
 
 
 def test_valid_transition():

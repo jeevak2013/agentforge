@@ -5,8 +5,11 @@ from uuid import uuid4
 
 import pytest
 
-from src.infrastructure.providers.base_provider import BaseProvider, ProviderHealth
-from src.infrastructure.providers.provider_models import (
+from src.agentforge.infrastructure.providers.base_provider import (
+    BaseProvider,
+    ProviderHealth,
+)
+from src.agentforge.infrastructure.providers.provider_models import (
     ProviderRequest,
     ProviderResponse,
 )

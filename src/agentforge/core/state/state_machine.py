@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from core.state.runtime_state import RuntimeState
+from src.agentforge.core.state.runtime_state import RuntimeState
 
 
 class TaskStateMachine:

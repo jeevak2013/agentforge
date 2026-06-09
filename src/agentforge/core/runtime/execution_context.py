@@ -6,7 +6,7 @@ from uuid import UUID, uuid4
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from src.core.task.task import Task
+from src.agentforge.core.task.task import Task
 
 
 class ExecutionContext(BaseModel):

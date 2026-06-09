@@ -6,7 +6,7 @@ from uuid import UUID, uuid4
 
 from pydantic import BaseModel, Field
 
-from src.core.state.runtime_state import RuntimeState
+from src.agentforge.core.state.runtime_state import RuntimeState
 
 
 class Task(BaseModel):

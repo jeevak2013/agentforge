@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 
-from src.core.state.runtime_state import RuntimeState
-from src.core.task.task import Task
-from src.infrastructure.providers.provider_models import ProviderResponse
+from src.agentforge.core.state.runtime_state import RuntimeState
+from src.agentforge.core.task.task import Task
+from src.agentforge.infrastructure.providers.provider_models import ProviderResponse
 
 
 class CompletionManager:

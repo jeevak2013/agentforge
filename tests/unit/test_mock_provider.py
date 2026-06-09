@@ -4,12 +4,12 @@ import pytest
 
 from uuid import uuid4
 
-from src.infrastructure.providers.mock_provider import (
+from src.agentforge.infrastructure.providers.mock_provider import (
     MockProvider,
     MockProviderConfig,
 )
 
-from src.infrastructure.providers.provider_models import (
+from src.agentforge.infrastructure.providers.provider_models import (
     Message,
     MessageRole,
     ProviderRequest,

@@ -4,8 +4,8 @@ from uuid import UUID
 
 import pytest
 
-from src.core.runtime.execution_context import ExecutionContext
-from src.core.task.task import Task
+from src.agentforge.core.runtime.execution_context import ExecutionContext
+from src.agentforge.core.task.task import Task
 
 
 @pytest.fixture

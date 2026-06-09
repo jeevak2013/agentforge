@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.core.state.runtime_state import RuntimeState
+from src.agentforge.core.state.runtime_state import RuntimeState
 
 
 def test_runtime_state_values():

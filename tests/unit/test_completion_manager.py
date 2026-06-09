@@ -4,10 +4,13 @@ import pytest
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from src.core.completion.completion_manager import CompletionManager
-from src.core.state.runtime_state import RuntimeState
-from src.core.task.task import Task
-from src.infrastructure.providers.provider_models import ProviderResponse, FinishReason
+from src.agentforge.core.completion.completion_manager import CompletionManager
+from src.agentforge.core.state.runtime_state import RuntimeState
+from src.agentforge.core.task.task import Task
+from src.agentforge.infrastructure.providers.provider_models import (
+    ProviderResponse,
+    FinishReason,
+)
 
 
 def test_validate_success():

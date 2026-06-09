@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from uuid import UUID, uuid4
 
-from src.infrastructure.providers.provider_models import (
+from src.agentforge.infrastructure.providers.provider_models import (
     FinishReason,
     Message,
     MessageRole,

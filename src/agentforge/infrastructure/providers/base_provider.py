@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import AsyncGenerator
 
-from src.infrastructure.providers.provider_models import (
+from src.agentforge.infrastructure.providers.provider_models import (
     ProviderRequest,
     ProviderResponse,
 )
